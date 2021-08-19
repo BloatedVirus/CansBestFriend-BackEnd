@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cans",
+  "info": {
+    "name": "cans",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "comments": {
+      "via": "can",
+      "collection": "comments"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "cans"
+    }
+  }
+}
