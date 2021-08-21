@@ -20,13 +20,6 @@
       "type": "text",
       "required": true
     },
-    "username": {
-      "type": "string",
-      "required": true
-    },
-    "rating": {
-      "type": "integer"
-    },
     "img": {
       "model": "file",
       "via": "related",
@@ -45,6 +38,9 @@
       "plugin": "users-permissions",
       "model": "user",
       "via": "cans"
+    },
+    "username": {
+      "type": "string"
     }
   }
 }
